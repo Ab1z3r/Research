@@ -1,0 +1,230 @@
+└─$ python3 build_ids_v4.py
+2023-05-06 19:35:18.104521: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-05-06 19:35:18.598758: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+[*] Importing train + test data from csv file...
+[+] Imported train_data
+[+] Imported train_data
+[+] Successfully imported training : test data - (1606580, 69) : (688535, 69) ...
+[*] zscore normalization for 68 columns
+[+] normalization complete
+[*] Starting one hot encoding
+[+] One hot encoding finished
+[+] Final feature shapes- (1606580, 68) : (688535, 68)
+[+] Final label shapes- (1606580, 6) : (688535, 6)
+[+] Split train into training and validation...
+[*] Starting model training...
+[*] train_data : labels - (1285264, 68) : (1285264, 6)
+[*] test_data : labels - (321316, 68) : (321316, 6)
+[*] Epochs: 100, batch_size: 64, early_stopping_patience: 10
+[+] Using input_shape = (68, 6)...
+[*] Building model of shape (68, 6)
+2023-05-06 19:35:27.639527: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:27.673205: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:27.673327: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:27.675881: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:27.676020: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:27.676072: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:28.374029: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:28.374158: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:28.374179: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1722] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2023-05-06 19:35:28.374216: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:982] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-05-06 19:35:28.374291: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1635] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5875 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2070 Super with Max-Q Design, pci bus id: 0000:01:00.0, compute capability: 7.5
+[+] Successfully built model
+[+] Expanding dimensions completed...
+[+] train_data : labels - (1285264, 68) : (1285264, 6)...
+[+] test_data : labels - (321316, 68) : (321316, 6)...
+[+] Feature array shapes: (1285264, 68) : (321316, 68)
+[+] Label array shapes: (1285264, 6) : (321316, 6)
+[+] Created Numpy arrays
+Epoch 1/100
+2023-05-06 19:35:30.282535: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x7f7d4ca3e5d0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2023-05-06 19:35:30.282576: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): NVIDIA GeForce RTX 2070 Super with Max-Q Design, Compute Capability 7.5
+2023-05-06 19:35:30.286241: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2023-05-06 19:35:30.403900: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:424] Loaded cuDNN version 8900
+2023-05-06 19:35:30.497824: I ./tensorflow/compiler/jit/device_compiler.h:180] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+20083/20083 [==============================] - 111s 5ms/step - loss: 0.0319 - val_loss: 0.0108
+Epoch 2/100
+20083/20083 [==============================] - 109s 5ms/step - loss: 0.0096 - val_loss: 0.0079
+Epoch 3/100
+20083/20083 [==============================] - 118s 6ms/step - loss: 0.0084 - val_loss: 0.0095
+Epoch 4/100
+20083/20083 [==============================] - 104s 5ms/step - loss: 0.0078 - val_loss: 0.0085
+Epoch 5/100
+20083/20083 [==============================] - 110s 5ms/step - loss: 0.0074 - val_loss: 0.0085
+Epoch 6/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0071 - val_loss: 0.0078
+Epoch 7/100
+20083/20083 [==============================] - 121s 6ms/step - loss: 0.0069 - val_loss: 0.0067
+Epoch 8/100
+20083/20083 [==============================] - 123s 6ms/step - loss: 0.0068 - val_loss: 0.0064
+Epoch 9/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0067 - val_loss: 0.0067
+Epoch 10/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0064 - val_loss: 0.0065
+Epoch 11/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0062 - val_loss: 0.0060
+Epoch 12/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0061 - val_loss: 0.0069
+Epoch 13/100
+20083/20083 [==============================] - 125s 6ms/step - loss: 0.0061 - val_loss: 0.0063
+Epoch 14/100
+20083/20083 [==============================] - 121s 6ms/step - loss: 0.0060 - val_loss: 0.0086
+Epoch 15/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0058 - val_loss: 0.0073
+Epoch 16/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0059 - val_loss: 0.0066
+Epoch 17/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0058 - val_loss: 0.0060
+Epoch 18/100
+20083/20083 [==============================] - 122s 6ms/step - loss: 0.0057 - val_loss: 0.0068
+Epoch 19/100
+20083/20083 [==============================] - 121s 6ms/step - loss: 0.0056 - val_loss: 0.0059
+Epoch 20/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0056 - val_loss: 0.0079
+Epoch 21/100
+20083/20083 [==============================] - 119s 6ms/step - loss: 0.0056 - val_loss: 0.0066
+Epoch 22/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0054 - val_loss: 0.0062
+Epoch 23/100
+20083/20083 [==============================] - 119s 6ms/step - loss: 0.0054 - val_loss: 0.0061
+Epoch 24/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0054 - val_loss: 0.0062
+Epoch 25/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0053 - val_loss: 0.0060
+Epoch 26/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0051 - val_loss: 0.0068
+Epoch 27/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0053 - val_loss: 0.0056
+Epoch 28/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0051 - val_loss: 0.0063
+Epoch 29/100
+20083/20083 [==============================] - 109s 5ms/step - loss: 0.0052 - val_loss: 0.0058
+Epoch 30/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0051 - val_loss: 0.0057
+Epoch 31/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0051 - val_loss: 0.0059
+Epoch 32/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0051 - val_loss: 0.0059
+Epoch 33/100
+20083/20083 [==============================] - 120s 6ms/step - loss: 0.0050 - val_loss: 0.0071
+Epoch 34/100
+20083/20083 [==============================] - 111s 6ms/step - loss: 0.0050 - val_loss: 0.0071
+Epoch 35/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0050 - val_loss: 0.0064
+Epoch 36/100
+20083/20083 [==============================] - 104s 5ms/step - loss: 0.0049 - val_loss: 0.0056
+Epoch 37/100
+20083/20083 [==============================] - 110s 5ms/step - loss: 0.0049 - val_loss: 0.0060
+Epoch 38/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0050 - val_loss: 0.0061
+Epoch 39/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0050 - val_loss: 0.0066
+Epoch 40/100
+20083/20083 [==============================] - 120s 6ms/step - loss: 0.0048 - val_loss: 0.0064
+Epoch 41/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0049 - val_loss: 0.0054
+Epoch 42/100
+20083/20083 [==============================] - 126s 6ms/step - loss: 0.0048 - val_loss: 0.0062
+Epoch 43/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0048 - val_loss: 0.0057
+Epoch 44/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0048 - val_loss: 0.0053
+Epoch 45/100
+20083/20083 [==============================] - 111s 6ms/step - loss: 0.0047 - val_loss: 0.0059
+Epoch 46/100
+20083/20083 [==============================] - 99s 5ms/step - loss: 0.0047 - val_loss: 0.0056
+Epoch 47/100
+20083/20083 [==============================] - 119s 6ms/step - loss: 0.0047 - val_loss: 0.0056
+Epoch 48/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0048 - val_loss: 0.0051
+Epoch 49/100
+20083/20083 [==============================] - 111s 6ms/step - loss: 0.0048 - val_loss: 0.0061
+Epoch 50/100
+20083/20083 [==============================] - 123s 6ms/step - loss: 0.0049 - val_loss: 0.0057
+Epoch 51/100
+20083/20083 [==============================] - 109s 5ms/step - loss: 0.0048 - val_loss: 0.0054
+Epoch 52/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0048 - val_loss: 0.0073
+Epoch 53/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0047 - val_loss: 0.0062
+Epoch 54/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0048 - val_loss: 0.0066
+Epoch 55/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0048 - val_loss: 0.0053
+Epoch 56/100
+20083/20083 [==============================] - 115s 6ms/step - loss: 0.0047 - val_loss: 0.0051
+Epoch 57/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0049 - val_loss: 0.0053
+Epoch 58/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0046 - val_loss: 0.0061
+Epoch 59/100
+20083/20083 [==============================] - 105s 5ms/step - loss: 0.0048 - val_loss: 0.0055
+Epoch 60/100
+20083/20083 [==============================] - 105s 5ms/step - loss: 0.0047 - val_loss: 0.0065
+Epoch 61/100
+20083/20083 [==============================] - 112s 6ms/step - loss: 0.0045 - val_loss: 0.0056
+Epoch 62/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0047 - val_loss: 0.0050
+Epoch 63/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0045 - val_loss: 0.0051
+Epoch 64/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0044 - val_loss: 0.0059
+Epoch 65/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0045 - val_loss: 0.0069
+Epoch 66/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0046 - val_loss: 0.0057
+Epoch 67/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0047 - val_loss: 0.0050
+Epoch 68/100
+20083/20083 [==============================] - 117s 6ms/step - loss: 0.0047 - val_loss: 0.0059
+Epoch 69/100
+20083/20083 [==============================] - 121s 6ms/step - loss: 0.0044 - val_loss: 0.0051
+Epoch 70/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0045 - val_loss: 0.0054
+Epoch 71/100
+20083/20083 [==============================] - 109s 5ms/step - loss: 0.0044 - val_loss: 0.0051
+Epoch 72/100
+20083/20083 [==============================] - 107s 5ms/step - loss: 0.0046 - val_loss: 0.0049
+Epoch 73/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0043 - val_loss: 0.0055
+Epoch 74/100
+20083/20083 [==============================] - 122s 6ms/step - loss: 0.0046 - val_loss: 0.0059
+Epoch 75/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0045 - val_loss: 0.0059
+Epoch 76/100
+20083/20083 [==============================] - 113s 6ms/step - loss: 0.0046 - val_loss: 0.0052
+Epoch 77/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0048 - val_loss: 0.0056
+Epoch 78/100
+20083/20083 [==============================] - 114s 6ms/step - loss: 0.0043 - val_loss: 0.0059
+Epoch 79/100
+20083/20083 [==============================] - 111s 6ms/step - loss: 0.0046 - val_loss: 0.0063
+Epoch 80/100
+20083/20083 [==============================] - 110s 5ms/step - loss: 0.0046 - val_loss: 0.0054
+Epoch 81/100
+20083/20083 [==============================] - 118s 6ms/step - loss: 0.0045 - val_loss: 0.0058
+Epoch 82/100
+20083/20083 [==============================] - 116s 6ms/step - loss: 0.0045 - val_loss: 0.0061
+[+] Finished model fiting onto test data
+10042/10042 [==============================] - 14s 1ms/step
+[+] probabilities: (321316, 6), test_labels_arr: (321316, 6)
+[+] predicted_labels: (321316,), test_labels_argmax: (321316,)
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Accuracy: 0.9994553648122098
+Precision: 0.7707284408033884
+Recall: 0.7820210394558581
+F1 score: 0.7760049446786524
+[+] Finished model training
+21517/21517 [==============================] - 30s 1ms/step
+Test accuracy: 0.9985534504418803
